@@ -5,8 +5,8 @@
 
 .navBar{
     display:flex;
-    padding:10px 20px;
-    gap:10px;
+    padding:10px 15px;
+    /* gap:10px; */
     background-color: #D8E7FF;
     align-items:center;
     justify-content: space-between;
