@@ -11,17 +11,26 @@
     background-color: #D8E7FF;
     align-items:center;
     justify-content: space-between;
+    position: relative;
 
     p{
         color : #1F4890;
     }
-    a{
+    .deuxiemeCoteNavBar
+    {
+        a
+        {
         color: #1F4890;
         text-decoration: none;
+        }
     }
 
 }
 
-#presentationLifePlanner{
-    background-color: ;
+/* #presentationLifePlannerSection{
+    background-color: #EBF1FB;
+} */
+
+.couleurDeFond{
+    background-color: #EBF1FB;
 }
