@@ -11,7 +11,7 @@
     background-color: #D8E7FF;
     align-items:center;
     justify-content: space-between;
-    position: relative;
+    /* position: relative; */
     p{
         color : #1F4890;
     }

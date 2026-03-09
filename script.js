@@ -3,7 +3,9 @@ function redirectionDashboard(){
 }
 
 // 
+// let navBar = document.querySelector(".navBar");
 let deuxiemeCoteNavBar = document.querySelector(".deuxiemeCoteNavBar");
+// deuxiemeCoteNavBar.style.postion = "relative";
 
 if(localStorage.getItem("sessionId") == null)
 {
@@ -11,7 +13,14 @@ if(localStorage.getItem("sessionId") == null)
     // on créé un élément avec comme contenu "Se connecter"
     let seConnecterElement = document.createElement("p");
     seConnecterElement.textContent = "Se connecter";
-    // seConnecterElement.style.position = "absolute";
     deuxiemeCoteNavBar.appendChild(seConnecterElement);
+    // si la souris est au dessus de l'élément "se connecter"
+    seConnecterElement.addEventListener("click", () => 
+        {
+            let seConnecter = document.createElement("p");
+            seConnecter.textContent = "Se connecter";
+            seConnecter.style.position = "absolute";
+            deuxiemeCoteNavBar.appendChild(seConnecter);
+        });
 }
 
