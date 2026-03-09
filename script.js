@@ -11,7 +11,7 @@ if(localStorage.getItem("sessionId") == null)
     // on créé un élément avec comme contenu "Se connecter"
     let seConnecterElement = document.createElement("p");
     seConnecterElement.textContent = "Se connecter";
-    seConnecterElement.style.position = "absolute";
+    // seConnecterElement.style.position = "absolute";
     deuxiemeCoteNavBar.appendChild(seConnecterElement);
 }
 
