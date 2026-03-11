@@ -46,7 +46,12 @@ function recupererDonneesConnexion(){
 // vérification des données écrites dans la page de connexion
 function verificationDesDonnees()
 {
-    // si 
+    // si le mot de passe est pareil que l'autre mot de passe écrit
+    if(motdePasseValeur == motDePasseValeur2)
+    {
+        
+    }
+
 }
 //vérifier session après click bouton de connexion
 function verifierSessionId()
