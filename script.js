@@ -39,9 +39,17 @@ let boutonConnexion = document.getElementById("boutonConnexion");
 
 // quand on appuie sur le bouton pour se connecter
 function recupererDonneesConnexion(){
+    let donnees = [];
     let adresseEmailvaleur = adresseEmailInput.value;
     let motDePasseValeur = motDePasseInput.value;
     let motDePasseValeur2 = motDePasseInput2.value;
+    let donneesPourBoucle = [adresseEmailvaleur, motDePasseValeur, motDePasseValeur2];
+
+    for(let i = 0 ; i < 3 ; i++)
+    {
+        donnees.push(donneesPourBoucle[i]);
+    }
+    return donnees;
 }
 // vérification des données écrites dans la page de connexion
 function verificationDesDonnees()
