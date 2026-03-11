@@ -31,7 +31,8 @@ let boutonConnexion = document.getElementById("boutonConnexion");
 
     boutonConnexion.addEventListener("click", () => 
     {
-        recupererDonneesConnexion();
+        let donnees = recupererDonneesConnexion();
+
     });
 
 // quand on appuie sur le bouton pour se connecter
@@ -42,8 +43,12 @@ function recupererDonneesConnexion(){
 //vérifier session après click bouton de connexion
 function verifierSessionId()
 {
+    //
+    let donnees = ["","",""];
+    // si il n'y a pas de sessionId stocké
     if(localStorage.getItem("sessionId") == null)
     {
-        //il faut récupérer les données
+        //il faut créer les données
+        localStorage.setItem("sessionId", "1234");
     }
 }
