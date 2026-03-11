@@ -39,11 +39,11 @@ let boutonConnexion = document.getElementById("boutonConnexion");
 
 // quand on appuie sur le bouton pour se connecter
 function recupererDonneesConnexion(){
-    let donnees = [];
-    let adresseEmailvaleur = adresseEmailInput.value;
+    let donnees = []; // [0] = adresseEmailValeur, [1] motDePasseValeur, [2] motDePasseValeur2
+    let adresseEmailValeur = adresseEmailInput.value;
     let motDePasseValeur = motDePasseInput.value;
     let motDePasseValeur2 = motDePasseInput2.value;
-    let donneesPourBoucle = [adresseEmailvaleur, motDePasseValeur, motDePasseValeur2];
+    let donneesPourBoucle = [adresseEmailValeur, motDePasseValeur, motDePasseValeur2];
 
     for(let i = 0 ; i < 3 ; i++)
     {
