@@ -52,10 +52,10 @@ function recupererDonneesConnexion(){
     return donnees;
 }
 // vérification des données écrites dans la page de connexion
-function verificationDesDonnees()
+function verificationDesDonnees(donnees)
 {
     // si le mot de passe est pareil que l'autre mot de passe écrit
-    if(motdePasseValeur == motDePasseValeur2)
+    if(donnees[1] == donnees[2])
     {
         
     }
