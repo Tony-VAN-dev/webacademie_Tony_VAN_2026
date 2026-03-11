@@ -43,7 +43,11 @@ function recupererDonneesConnexion(){
     let motDePasseValeur = motDePasseInput.value;
     let motDePasseValeur2 = motDePasseInput2.value;
 }
-
+// vérification des données écrites dans la page de connexion
+function verificationDesDonnees()
+{
+    // si 
+}
 //vérifier session après click bouton de connexion
 function verifierSessionId()
 {
