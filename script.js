@@ -27,6 +27,8 @@ function redirectionDashboard(){
 
 // variables
 let adresseEmailInput = document.getElementById("adresseEmail");
+let motDePasseInput = document.getElementById("motDePasse");
+let motDePasseInput2 = document.getElementById("motDePasse2");
 let boutonConnexion = document.getElementById("boutonConnexion");
 
     boutonConnexion.addEventListener("click", () => 
@@ -37,7 +39,9 @@ let boutonConnexion = document.getElementById("boutonConnexion");
 
 // quand on appuie sur le bouton pour se connecter
 function recupererDonneesConnexion(){
-    adresseEmailInput.value
+    let adresseEmailvaleur = adresseEmailInput.value;
+    let motDePasseValeur = motDePasseInput.value;
+    let motDePasseValeur2 = motDePasseInput2.value;
 }
 
 //vérifier session après click bouton de connexion
@@ -49,6 +53,6 @@ function verifierSessionId()
     if(localStorage.getItem("sessionId") == null)
     {
         //il faut créer les données
-        localStorage.setItem("sessionId", "1234");
+        // localStorage.setItem("sessionId", "1234");
     }
 }
