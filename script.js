@@ -73,3 +73,34 @@ function verifierSessionId()
         // localStorage.setItem("sessionId", "1234");
     }
 }
+
+// Données localStorage à récupérer
+function recupererDonneesLocalStorage()
+{
+    let donnees = [];
+    let adresseMail = localStorage.getItem()
+    let motDePasse = localStorage.getItem();
+}
+
+// créer un compte
+//variables création de compte
+
+class creerUnCompte
+{
+    
+}
+
+function creerCompteLocalStorage()
+{
+    let donnees = [];
+    
+}
+
+class gestionLocalStorage{
+    #donnees = [];
+    constructor(donnees)
+    creerCompteLocalStorage(donnees)
+    {
+        localStorage.setItem("session","1234");
+    }
+}
