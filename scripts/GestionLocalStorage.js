@@ -8,15 +8,18 @@ class gestionLocalStorage{
     creerUnCompte() // fonction principale
         {
             let donnees = recupererDonneesConnexion();
+            this.verificationDesDonnees(donnees);
             
         }
 
     creerCompteLocalStorage(donnees)
     {
         localStorage.setItem("session", "1234");
+        localStorage.setItem("adresseMail", donnees[1]);
+        localStorage.setItem("adresseMail", donnees[2]);
     }
 
-
+    // quand on appuie sur le bouton pour se connecter
     recupererDonneesConnexion()
     {
         donnees = []; // [0] = adresseEmailValeur, [1] motDePasseValeur, [2] motDePasseValeur2
@@ -32,9 +35,22 @@ class gestionLocalStorage{
         return donnees;
     }
     
-    verificationDesDonnees()
+    verificationDesDonnees(donneesConnexion, donneesLocalStorage)
     {
+        // si le mot de passe est pareil que l'autre mot de passe écrit
+        if(donneesConnexion[1] == donnees[2])
+        {
+            console.log("mot de passe correct");
+        }
 
+    }
+
+    verifierSessionId()
+    {
+        if(localStorage.getItem("sessionId") == null)
+        {
+            console.log("Pas de sessionId détecté");
+        }
     }
 
 }
