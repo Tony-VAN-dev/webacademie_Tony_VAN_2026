@@ -2,10 +2,22 @@ class gestionLocalStorage{
     #donnees = [];
     constructor(donnees)
     {
+
+        
+    }
+
+    creerUnCompte()
+        {
+            let donnees = recupererDonneesConnexion();
+            
+        }
+
         creerCompteLocalStorage(donnees)
         {
             localStorage.setItem("session", "1234");
         }
+
+        
 
         recupererDonneesConnexion()
         {
@@ -21,7 +33,10 @@ class gestionLocalStorage{
             }
             return donnees;
         }
+        
+        verificationDesDonnees()
+        {
 
-    }
+        }
 
 }
