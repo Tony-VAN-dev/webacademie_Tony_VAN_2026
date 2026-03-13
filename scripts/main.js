@@ -83,12 +83,6 @@ function recupererDonneesLocalStorage()
 }
 
 // créer un compte
-//variables création de compte
-
-class creerUnCompte
-{
-    
-}
 
 function creerCompteLocalStorage()
 {
