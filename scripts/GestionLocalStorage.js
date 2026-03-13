@@ -2,41 +2,39 @@ class gestionLocalStorage{
     #donnees = [];
     constructor(donnees)
     {
-
-        
+        this.#donnees = donnees;
     }
 
-    creerUnCompte()
+    creerUnCompte() // fonction principale
         {
             let donnees = recupererDonneesConnexion();
             
         }
 
-        creerCompteLocalStorage(donnees)
+    creerCompteLocalStorage(donnees)
+    {
+        localStorage.setItem("session", "1234");
+    }
+
+
+    recupererDonneesConnexion()
+    {
+        donnees = []; // [0] = adresseEmailValeur, [1] motDePasseValeur, [2] motDePasseValeur2
+        adresseEmailValeur = adresseEmailInput.value;
+        motDePasseValeur = motDePasseInput.value;
+        motDePasseValeur2 = motDePasseInput2.value;
+        donneesPourBoucle = [adresseEmailValeur, motDePasseValeur, motDePasseValeur2];
+
+        for(let i = 0 ; i < 3 ; i++)
         {
-            localStorage.setItem("session", "1234");
+            donnees.push(donneesPourBoucle[i]);
         }
+        return donnees;
+    }
+    
+    verificationDesDonnees()
+    {
 
-        
-
-        recupererDonneesConnexion()
-        {
-            donnees = []; // [0] = adresseEmailValeur, [1] motDePasseValeur, [2] motDePasseValeur2
-            adresseEmailValeur = adresseEmailInput.value;
-            motDePasseValeur = motDePasseInput.value;
-            motDePasseValeur2 = motDePasseInput2.value;
-            donneesPourBoucle = [adresseEmailValeur, motDePasseValeur, motDePasseValeur2];
-
-            for(let i = 0 ; i < 3 ; i++)
-            {
-                donnees.push(donneesPourBoucle[i]);
-            }
-            return donnees;
-        }
-        
-        verificationDesDonnees()
-        {
-
-        }
+    }
 
 }
