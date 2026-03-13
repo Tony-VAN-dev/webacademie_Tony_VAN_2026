@@ -1,43 +1,36 @@
+import "./variables.js";
+
 function redirectionDashboard(){
     window.location.href = "dashboard.html";
 }
 
-// 
-// let navBar = document.querySelector(".navBar");
-// let deuxiemeCoteNavBar = document.querySelector(".deuxiemeCoteNavBar");
-// deuxiemeCoteNavBar.style.postion = "relative";
+
+let navBar = document.querySelector(".navBar");
+let deuxiemeCoteNavBar = document.querySelector(".deuxiemeCoteNavBar");
+deuxiemeCoteNavBar.style.postion = "relative";
 
 
-// if(localStorage.getItem("sessionId") == null)
-// {
-//     console.log("Y'a pas d'id de session");
-//     // on créé un élément avec comme contenu "Se connecter"
-//     let seConnecterElement = document.createElement("p");
-//     seConnecterElement.textContent = "Se connecter";
-//     deuxiemeCoteNavBar.appendChild(seConnecterElement);
-//     // si la souris est au dessus de l'élément "se connecter"
-//     seConnecterElement.addEventListener("click", () => 
-//         {
-//             let seConnecter = document.createElement("p");
-//             seConnecter.textContent = "Se connecter";
-//             seConnecter.style.position = "absolute";
-//             deuxiemeCoteNavBar.appendChild(seConnecter);
-//         });
-// }
-
-
-
-
-// vérification des données écrites dans la page de connexion
-function verificationDesDonnees(donneesConnexion, donneesLocalStorage)
+if(localStorage.getItem("sessionId") == null)
 {
-    // si le mot de passe est pareil que l'autre mot de passe écrit
-    if(donneesConnexion[1] == donnees[2])
-    {
-        
-    }
-
+    console.log("Y'a pas d'id de session");
+    // on créé un élément avec comme contenu "Se connecter"
+    let seConnecterElement = document.createElement("p");
+    seConnecterElement.textContent = "Se connecter";
+    deuxiemeCoteNavBar.appendChild(seConnecterElement);
+    // si la souris est au dessus de l'élément "se connecter"
+    seConnecterElement.addEventListener("click", () => 
+        {
+            let seConnecter = document.createElement("p");
+            seConnecter.textContent = "Se connecter";
+            seConnecter.style.position = "absolute";
+            deuxiemeCoteNavBar.appendChild(seConnecter);
+        });
 }
+
+
+
+
+
 //vérifier session après click bouton de connexion
 function verifierSessionId()
 {

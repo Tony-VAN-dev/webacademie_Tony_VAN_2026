@@ -36,3 +36,10 @@
 .couleurDeFond{
     background-color: #EBF1FB;
 }
+
+/* SECTIONS */
+
+#presentationLifePlanner{
+    height:600px;
+    text-align:center;
+}
