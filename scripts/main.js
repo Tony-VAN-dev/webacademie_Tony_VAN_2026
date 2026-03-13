@@ -1,15 +1,18 @@
 import "./variables.js";
 
-function redirectionDashboard(){
-    window.location.href = "dashboard.html";
-}
+// function redirectionDashboard(){
+//     window.location.href = "dashboard.html";
+// }
 
+// variables du site Web
 
 let navBar = document.querySelector(".navBar");
 let deuxiemeCoteNavBar = document.querySelector(".deuxiemeCoteNavBar");
 deuxiemeCoteNavBar.style.postion = "relative";
+let presentationLifePlannerSection = document.getElementById("presentationLifePlanner");
 
 
+/* Si il n'y a pas de sessionId */
 if(localStorage.getItem("sessionId") == null)
 {
     console.log("Y'a pas d'id de session");
@@ -20,10 +23,13 @@ if(localStorage.getItem("sessionId") == null)
     // si la souris est au dessus de l'élément "se connecter"
     seConnecterElement.addEventListener("click", () => 
         {
+            let formulaire = document.createElement("div");
+            formulaire.classList.add("formulaire");
+            presentationLifePlannerSection.appendChild(formulaire);
             let seConnecter = document.createElement("p");
             seConnecter.textContent = "Se connecter";
             seConnecter.style.position = "absolute";
-            deuxiemeCoteNavBar.appendChild(seConnecter);
+            formulaire.appendChild(seConnecter);
         });
 }
 

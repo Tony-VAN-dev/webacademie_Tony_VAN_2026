@@ -37,6 +37,14 @@
     background-color: #EBF1FB;
 }
 
+/*Formulaire*/
+.formulaire{
+    width:200px;
+    padding:10px;
+    background-color:#D8E7FF;
+    border:solid 5px white;
+}
+
 /* SECTIONS */
 
 #presentationLifePlanner{
