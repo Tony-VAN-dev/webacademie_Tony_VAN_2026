@@ -1,4 +1,5 @@
 import "./variables.js";
+import "./GestionLocalStorage.js";
 
 // function redirectionDashboard(){
 //     window.location.href = "dashboard.html";
@@ -34,29 +35,6 @@ if(localStorage.getItem("sessionId") == null)
 }
 
 
-
-
-
-//vérifier session après click bouton de connexion
-function verifierSessionId()
-{
-    //
-    let donnees = ["","",""];
-    // si il n'y a pas de sessionId stocké
-    if(localStorage.getItem("sessionId") == null)
-    {
-        //il faut créer les données
-        // localStorage.setItem("sessionId", "1234");
-    }
-}
-
-// Données localStorage à récupérer
-function recupererDonneesLocalStorage()
-{
-    let donnees = [];
-    let adresseMail = localStorage.getItem()
-    let motDePasse = localStorage.getItem();
-}
 
 // créer un compte
 

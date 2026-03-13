@@ -40,9 +40,16 @@
 /*Formulaire*/
 .formulaire{
     width:200px;
+    height:300px;
     padding:10px;
     background-color:#D8E7FF;
-    border:solid 5px white;
+    /* border:solid 5px rgb(208, 150, 150); */
+    border-radius:10px;
+    top:0;
+    /* bottom:0; */
+    right:0;
+    margin-right:10px;
+    position:absolute;
 }
 
 /* SECTIONS */
@@ -50,4 +57,5 @@
 #presentationLifePlanner{
     height:600px;
     text-align:center;
+    position:relative;
 }
