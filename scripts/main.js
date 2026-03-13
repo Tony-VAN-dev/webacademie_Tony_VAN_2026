@@ -24,12 +24,30 @@ if(localStorage.getItem("sessionId") == null)
     // si la souris est au dessus de l'élément "se connecter"
     seConnecterElement.addEventListener("click", () => 
         {
+            //formulaire
             let formulaire = document.createElement("div");
             formulaire.classList.add("formulaire");
             presentationLifePlannerSection.appendChild(formulaire);
+
+
+
+
+            // email
+            
+            let inputEmail = document.createElement("input");
+            inputEmail.setAttribute("placeholder","Entrez votre adresse mail");
+            // mot de passe
+            let inputMdp = document.createElement("input");
+            inputMdp.setAttribute("type","password");
+            
+            // se connecter
             let seConnecter = document.createElement("p");
             seConnecter.textContent = "Se connecter";
             seConnecter.style.position = "absolute";
+
+            // ajouts d'enfants au formulaire
+            formulaire.appendChild(inputEmail);
+            formulaire.appendChild(inputMdp);
             formulaire.appendChild(seConnecter);
         });
 }
