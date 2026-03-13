@@ -9,7 +9,7 @@ import "./GestionLocalStorage.js";
 
 let navBar = document.querySelector(".navBar");
 let deuxiemeCoteNavBar = document.querySelector(".deuxiemeCoteNavBar");
-deuxiemeCoteNavBar.style.postion = "relative";
+deuxiemeCoteNavBar.style.position = "relative";
 let presentationLifePlannerSection = document.getElementById("presentationLifePlanner");
 
 
@@ -27,8 +27,8 @@ if(localStorage.getItem("sessionId") == null)
             //formulaire
             let formulaire = document.createElement("div");
             formulaire.classList.add("formulaire");
-            presentationLifePlannerSection.appendChild(formulaire);
-
+            // presentationLifePlannerSection.appendChild(formulaire);
+            document.body.appendChild(formulaire);
 
 
 

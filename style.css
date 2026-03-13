@@ -6,16 +6,19 @@
 
 .navBar{
     display:flex;
-    padding:20px 25px;
+    /* padding:20px 10px 20px 10px; */
     /* gap:10px; */
     background-color: #D8E7FF;
     align-items:center;
     justify-content: space-between;
-    /* position: relative; */
+    position:fixed;
+    
+    width:100%;
+
     p{
         color : #1F4890;
     }
-
+    
 }
 
 .deuxiemeCoteNavBar
@@ -50,6 +53,7 @@
     right:0;
     margin-right:10px;
     position:absolute;
+    border: 2px solid rgb(42, 42, 42);
 }
 
 /* SECTIONS */
@@ -57,5 +61,5 @@
 #presentationLifePlanner{
     height:600px;
     text-align:center;
-    position:relative;
+    /* position:relative; */
 }
