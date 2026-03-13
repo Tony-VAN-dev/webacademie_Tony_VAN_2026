@@ -33,59 +33,45 @@ if(localStorage.getItem("sessionId") == null)
 
 
             // email
-            
+            let labelEmail = document.createElement("label");
+            labelEmail.textContent = "Entrez votre adresse mail";
             let inputEmail = document.createElement("input");
             inputEmail.setAttribute("placeholder","Entrez votre adresse mail");
             // mot de passe
+            let labelMdp = document.createElement("label");
+            labelMdp.textContent = "Entrez votre mot de passe";
             let inputMdp = document.createElement("input");
             inputMdp.setAttribute("type","password");
+            inputMdp.style.display = "block";
             
+            // mot de passe
+            let labelMdp2 = document.createElement("label");
+            labelMdp2.textContent = "Entrez votre mot de passe";
+            let inputMdp2 = document.createElement("input");
+            inputMdp2.setAttribute("type","password");
+            inputMdp2.style.display = "block";
+
             // se connecter
-            let seConnecter = document.createElement("p");
+            let seConnecter = document.createElement("button");
             seConnecter.textContent = "Se connecter";
             seConnecter.style.position = "absolute";
+            seConnecter.style.textAlign = "left";
 
             // ajouts d'enfants au formulaire
-            formulaire.appendChild(inputEmail);
-            formulaire.appendChild(inputMdp);
-            formulaire.appendChild(seConnecter);
-        });
-}
+            
+            let tableauEnfants_a_ajouter = [
+            labelEmail,
+            inputEmail,
+            labelMdp,
+            inputMdp,
+            inputMdp2,
+            seConnecter
+            ];
 
-
-
-// créer un compte
-
-function creerCompteLocalStorage()
-{
-    let donnees = [];
-    
-}
-
-class gestionLocalStorage{
-    #donnees = [];
-    constructor(donnees)
-    {
-        creerCompteLocalStorage(donnees)
-        {
-            localStorage.setItem("session", "1234");
-        }
-
-        recupererDonneesConnexion()
-        {
-            donnees = []; // [0] = adresseEmailValeur, [1] motDePasseValeur, [2] motDePasseValeur2
-            adresseEmailValeur = adresseEmailInput.value;
-            motDePasseValeur = motDePasseInput.value;
-            motDePasseValeur2 = motDePasseInput2.value;
-            donneesPourBoucle = [adresseEmailValeur, motDePasseValeur, motDePasseValeur2];
-
-            for(let i = 0 ; i < 3 ; i++)
+            tableauEnfants_a_ajouter.forEach((e) =>
             {
-                donnees.push(donneesPourBoucle[i]);
-            }
-            return donnees;
-        }
-
-    }
-
+                formulaire.appendChild(e);
+                console.log(e);
+            });
+        });
 }
