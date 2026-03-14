@@ -17,12 +17,12 @@ let presentationLifePlannerSection = document.getElementById("presentationLifePl
 if(localStorage.getItem("sessionId") == null)
 {
     console.log("Y'a pas d'id de session");
-    // on créé un élément avec comme contenu "Se connecter"
-    let seConnecterElement = document.createElement("p");
-    seConnecterElement.textContent = "Se connecter";
-    deuxiemeCoteNavBar.appendChild(seConnecterElement);
-    // si la souris est au dessus de l'élément "se connecter"
-    seConnecterElement.addEventListener("click", () => 
+    // on créé un élément avec comme contenu "Mon compte"
+    let monCompteElement = document.createElement("p");
+    monCompteElement.textContent = "Mon compte";
+    deuxiemeCoteNavBar.appendChild(monCompteElement);
+    // si la souris est au dessus de l'élément "Mon compte"
+    monCompteElement.addEventListener("click", () => 
         {
             console.log(formulaire);
             formulaire.classList.toggle("hidden");
