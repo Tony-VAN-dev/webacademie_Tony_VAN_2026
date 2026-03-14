@@ -12,7 +12,7 @@ class gestionLocalStorage{
             
         }
 
-    creerCompteLocalStorage(donnees)
+    creerCompteLocalStorage(donnees) // objet Utilisateur qui sera créé, FONCTION A METTRE A JOUR
     {
         localStorage.setItem("session", "1234");
         localStorage.setItem("adresseMail", donnees[1]);

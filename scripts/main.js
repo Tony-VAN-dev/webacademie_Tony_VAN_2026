@@ -93,9 +93,12 @@ function creerformulaire()
     {
         divCreerEtConnecterCompte.appendChild(e); // ajout d'enfants à la div
     });
-
+    //divCreerEtConnecterCompte
     divCreerEtConnecterCompte.classList.add("divCreerEtConnecterCompte")
-
+    divCreerEtConnecterCompte.addEventListener("click",(e)=>
+    {
+        
+    });
     return formulaire;
 }
 
