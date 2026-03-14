@@ -58,7 +58,12 @@ function creerformulaire()
     let inputMdp2 = document.createElement("input");
     inputMdp2.setAttribute("type","password");
     inputMdp2.style.display = "block";
+    // div creerEtConnecterCompte
+    let divCreerEtConnecterCompte = document.createElement("div");
 
+    // créer un compte
+    let creerUnCompte = document.createElement("p");
+    creerUnCompte.textContent = "Créer votre compte";
     // se connecter
     let seConnecter = document.createElement("button");
     seConnecter.textContent = "Se connecter";
@@ -73,7 +78,7 @@ function creerformulaire()
     labelMdp,
     inputMdp,
     inputMdp2,
-    seConnecter
+    divCreerEtConnecterCompte
     ];
 
     tableauEnfants_a_ajouter.forEach((e) =>
@@ -81,7 +86,12 @@ function creerformulaire()
         formulaire.appendChild(e);
         console.log(e);
     });
-
+    
+    //tableau d'enfants de la div de création et de connexion à son compte
+    let tableauEnfantsCreerEtConnecterCompte = [creerUnCompte,seConnecter];
+    tableauEnfantsCreerEtConnecterCompte.forEach((e) =>{
+        divCreerEtConnecterCompte.appendChild(e); // ajout d'enfants à la div
+    });
     return formulaire;
 }
 

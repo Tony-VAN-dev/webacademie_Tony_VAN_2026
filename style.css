@@ -55,6 +55,11 @@
     margin-right:10px;
     position:fixed;
     border: 2px solid rgb(42, 42, 42);
+    
+    .divCreerEtConnecterCompte
+    {
+        display:flex;
+    }
 }
 
 .hidden
