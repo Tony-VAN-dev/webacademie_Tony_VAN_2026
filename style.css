@@ -6,13 +6,13 @@
 
 .navBar{
     display:flex;
-    /* padding:20px 10px 20px 10px; */
+    padding:20px 10px 20px 10px;
     /* gap:10px; */
     background-color: #D8E7FF;
     align-items:center;
     justify-content: space-between;
     position:fixed;
-    
+    box-sizing: border-box;
     width:100%;
 
     p{
