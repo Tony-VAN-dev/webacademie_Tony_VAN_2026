@@ -67,7 +67,7 @@ function creerformulaire()
     // se connecter
     let seConnecter = document.createElement("button");
     seConnecter.textContent = "Se connecter";
-    seConnecter.style.position = "absolute";
+    // seConnecter.style.position = "absolute";
     seConnecter.style.textAlign = "left";
 
     // ajouts d'enfants au formulaire
@@ -89,9 +89,13 @@ function creerformulaire()
     
     //tableau d'enfants de la div de création et de connexion à son compte
     let tableauEnfantsCreerEtConnecterCompte = [creerUnCompte,seConnecter];
-    tableauEnfantsCreerEtConnecterCompte.forEach((e) =>{
+    tableauEnfantsCreerEtConnecterCompte.forEach((e) =>
+    {
         divCreerEtConnecterCompte.appendChild(e); // ajout d'enfants à la div
     });
+
+    divCreerEtConnecterCompte.classList.add("divCreerEtConnecterCompte")
+
     return formulaire;
 }
 
