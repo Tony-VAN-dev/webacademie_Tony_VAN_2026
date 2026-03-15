@@ -1,14 +1,24 @@
-class gestionLocalStorage{
+export class GestionLocalStorage{
     #donnees = [];
+
     constructor(donnees)
     {
-        this.#donnees = donnees;
+        donnees.forEach((e)=>{
+            this.#donnees.push(e);
+        });
     }
 
+    getDonnees(){
+        console.log(this.#donnees);
+        return this.#donnees;
+    }
     creerUnCompte() // fonction principale
     {
-        let donnees = recupererDonneesConnexion();
-        this.verificationDesDonnees(donnees);
+        // let donnees = 
+        let donnees = this.getDonnees();
+        // let donnees = this.recupererDonneesInput();
+        this.creerCompteLocalStorage(donnees);
+        // this.verificationDesDonneesCreation(donnees);
         
     }
 
@@ -19,7 +29,15 @@ class gestionLocalStorage{
         if(localStorage.getItem("utilisateurs") == null)
         {
             let utilisateurs = [];
+            utilisateurs = JSON.stringify(utilisateurs);
             localStorage.setItem("utilisateurs",utilisateurs);
+            console.log(JSON.parse(localStorage.getItem("utilisateurs")));
+        }
+        else
+        {
+            console.log(JSON.parse(localStorage.getItem("utilisateurs")));
+            console.log("Le tableau d'utilisateurs existe déjà.");
+            
         }
     }
 
@@ -34,6 +52,7 @@ class gestionLocalStorage{
             {
                 id = crypto.randomUUID();
                 let tableauIdUtilisateur = [];
+                
             }
         });
         // une fois l'id est fiable à 100%, on va le mettre dans l'objet qu'on va créé
@@ -49,6 +68,23 @@ class gestionLocalStorage{
         // localStorage.setItem("adresseMail", donnees[2]);
     }
 
+    recupererDonneesInput()
+    {
+        let donnees = []; // [0] = adresseEmailValeur, [1] motDePasseValeur, [2] motDePasseValeur2
+        let adresseEmailValeur = this.#donnees[0].value;
+        let motDePasseValeur = this.#donnees[1].value;
+        let motDePasseValeur2 = this.#donnees[2].value;
+        let donneesPourBoucle = [adresseEmailValeur, motDePasseValeur, motDePasseValeur2];
+
+        for(let i = 0 ; i < 3 ; i++)
+        {
+            donnees.push(donneesPourBoucle[i]);
+            console.log(donnees);
+
+        }
+        return donnees;
+    }
+
     // quand on appuie sur le bouton pour se connecter
     recupererDonneesConnexion()
     {
@@ -61,11 +97,12 @@ class gestionLocalStorage{
         for(let i = 0 ; i < 3 ; i++)
         {
             donnees.push(donneesPourBoucle[i]);
+
         }
         return donnees;
     }
     
-    verificationDesDonnees(donneesConnexion, donneesLocalStorage)
+    verificationDesDonneesCreation(donneesConnexion, donneesLocalStorage)
     {
         // si le mot de passe est pareil que l'autre mot de passe écrit
         if(donneesConnexion[1] == donnees[2])

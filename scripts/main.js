@@ -1,5 +1,4 @@
-import "./variables.js";
-import "./GestionLocalStorage.js";
+import {GestionLocalStorage} from "./GestionLocalStorage.js";
 
 // function redirectionDashboard(){
 //     window.location.href = "dashboard.html";
@@ -45,18 +44,19 @@ function creerformulaire()
     labelEmail.textContent = "Entrez votre adresse mail";
     let inputEmail = document.createElement("input");
     inputEmail.setAttribute("placeholder","Entrez votre adresse mail");
+    inputEmail.setAttribute("id", "adresseEmail");
     // mot de passe
     let labelMdp = document.createElement("label");
     labelMdp.textContent = "Entrez votre mot de passe";
     let inputMdp = document.createElement("input");
     inputMdp.setAttribute("type","password");
+    inputMdp.setAttribute("id", "motDePasse");
     inputMdp.style.display = "block";
     
-    // mot de passe
-    let labelMdp2 = document.createElement("label");
-    labelMdp2.textContent = "Entrez votre mot de passe";
+    // mot de passe 2
     let inputMdp2 = document.createElement("input");
     inputMdp2.setAttribute("type","password");
+    inputMdp2.setAttribute("id", "motDePasse2");
     inputMdp2.style.display = "block";
     // div creerEtConnecterCompte
     let divCreerEtConnecterCompte = document.createElement("div");
@@ -64,6 +64,18 @@ function creerformulaire()
     // créer un compte
     let creerUnCompte = document.createElement("p");
     creerUnCompte.textContent = "Créer votre compte";
+    //si on clique sur Créer votre compte
+    creerUnCompte.addEventListener("click", ()=>
+    {
+        // variables
+        let adresseEmailInput = document.getElementById("adresseEmail");
+        let motDePasseInput = document.getElementById("motDePasse");
+        let motDePasseInput2 = document.getElementById("motDePasse2");
+
+        let donneesInput = [adresseEmailInput,motDePasseInput,motDePasseInput2];
+        let GestionLocalStorageInstance = new GestionLocalStorage(donneesInput);
+        GestionLocalStorageInstance.creerUnCompte();
+    });
     // se connecter
     let seConnecter = document.createElement("button");
     seConnecter.textContent = "Se connecter";
@@ -103,3 +115,4 @@ function creerformulaire()
 }
 
 let formulaire = creerformulaire();
+// console.log("les donnees sont : " + GestionLocalStorageInstance.getDonnees());

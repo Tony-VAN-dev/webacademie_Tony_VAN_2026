@@ -1,8 +1,8 @@
 // variables
-let adresseEmailInput = document.getElementById("adresseEmail");
-let motDePasseInput = document.getElementById("motDePasse");
-let motDePasseInput2 = document.getElementById("motDePasse2");
-let boutonConnexion = document.getElementById("boutonConnexion");
+export let adresseEmailInput = document.getElementById("adresseEmail");
+export let motDePasseInput = document.getElementById("motDePasse");
+export let motDePasseInput2 = document.getElementById("motDePasse2");
+export let boutonConnexion = document.getElementById("boutonConnexion");
 
 // boutonConnexion.addEventListener("click", () => 
 // {
