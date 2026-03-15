@@ -18,13 +18,13 @@ class gestionLocalStorage{
         //s'il n'y a pas de tableau utilisateurs, on va créé le tableau utilisateurs et le mettre en stockage
         if(localStorage.getItem("utilisateurs") == null)
         {
-            
+            let utilisateurs = [];
+            localStorage.setItem("utilisateurs",utilisateurs);
         }
     }
 
     creerCompteLocalStorage(donnees) // objet Utilisateur qui sera créé, FONCTION A METTRE A JOUR
     {
-        let utilisateurs = [];
         // création d'id pour un futur compte utilisateur
         let id = crypto.randomUUID();
         
@@ -33,6 +33,7 @@ class gestionLocalStorage{
             if(utilisateur.id === id)
             {
                 id = crypto.randomUUID();
+                
             }
         });
         // une fois l'id est fiable à 100%, on va le mettre dans l'objet qu'on va créé
