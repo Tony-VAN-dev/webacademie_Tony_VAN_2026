@@ -6,11 +6,21 @@ class gestionLocalStorage{
     }
 
     creerUnCompte() // fonction principale
+    {
+        let donnees = recupererDonneesConnexion();
+        this.verificationDesDonnees(donnees);
+        
+    }
+
+    
+    creerTableauUtilisateurs()
+    {
+        //s'il n'y a pas de tableau utilisateurs, on va créé le tableau utilisateurs et le mettre en stockage
+        if(localStorage.getItem("utilisateurs") == null)
         {
-            let donnees = recupererDonneesConnexion();
-            this.verificationDesDonnees(donnees);
             
         }
+    }
 
     creerCompteLocalStorage(donnees) // objet Utilisateur qui sera créé, FONCTION A METTRE A JOUR
     {
@@ -20,12 +30,15 @@ class gestionLocalStorage{
         
         // si l'id généré est égale à l'id d'un compte créé auparavant
         utilisateurs.forEach((utilisateur)=>{
-
+            if(utilisateur.id === id)
+            {
+                id = crypto.randomUUID();
+            }
         });
-
+        // une fois l'id est fiable à 100%, on va le mettre dans l'objet qu'on va créé
         let utilisateur = 
         {
-            "id": crypto.randomUUID(),
+            "id": id,
             "adresse mail": donnees[0],
             "motDePasse": donnees[1],
             "taches": []
