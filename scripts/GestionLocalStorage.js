@@ -33,7 +33,7 @@ class gestionLocalStorage{
             if(utilisateur.id === id)
             {
                 id = crypto.randomUUID();
-                
+                let tableauIdUtilisateur = [];
             }
         });
         // une fois l'id est fiable à 100%, on va le mettre dans l'objet qu'on va créé
