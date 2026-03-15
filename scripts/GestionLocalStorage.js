@@ -40,25 +40,37 @@ export class GestionLocalStorage{
             
         }
     }
-
-    creerCompteLocalStorage(donnees) // objet Utilisateur qui sera créé, FONCTION A METTRE A JOUR
+    verificationIdUtilisateur() // Retourne false si on true un id correct
     {
-        // création d'id pour un futur compte utilisateur
-        let id = crypto.randomUUID();
-        
-        // si l'id généré est égale à l'id d'un compte créé auparavant
-        utilisateurs.forEach((utilisateur)=>{
-            if(utilisateur.id === id)
+        let utilisateurs = JSON.parse(localStorage.getItem("utilisateurs"));
+
+        let tableauIdUtilisateur = [];
+        utilisateurs.forEach((utilisateur)=>
+        {
+        tableauIdUtilisateur.push(utilisateur.id);
+        });
+
+        tableauIdUtilisateur.forEach((e)=>{
+            if(e.id == utilisateurId)
             {
-                id = crypto.randomUUID();
-                let tableauIdUtilisateur = [];
-                
+                return false;
             }
         });
+    }
+    creerCompteLocalStorage(donnees) // objet Utilisateur qui sera créé, FONCTION A METTRE A JOUR
+    {
+        let utilisateurId = crypto.randomUUID();
+        //tant que l'id de l'utilisateur généré a un nombre égale à un des id des utilisateurs, on regénère son id
+        do
+        {
+            utilisateurId = crypto.randomUUID();
+        }
+        while(this.verificationIdUtilisateur(utilisateurId));
+        
         // une fois l'id est fiable à 100%, on va le mettre dans l'objet qu'on va créé
         let utilisateur = 
         {
-            "id": id,
+            "id": utilisateurId,
             "adresse mail": donnees[0],
             "motDePasse": donnees[1],
             "taches": []
