@@ -19,8 +19,9 @@ class gestionLocalStorage{
         let id = crypto.randomUUID();
         
         // si l'id généré est égale à l'id d'un compte créé auparavant
+        utilisateurs.forEach((utilisateur)=>{
 
-        
+        });
 
         let utilisateur = 
         {
