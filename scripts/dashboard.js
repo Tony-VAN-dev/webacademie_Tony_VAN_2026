@@ -71,6 +71,10 @@ creerPageTachesBouton.addEventListener("click", (e)=>
             //le boutonModiferTache disparait
             boutonModifierTache.style.display = "none";
             //creation d'un nouveau bouton Modifier
+            let nouveauBoutonModifier = document.createElement("button");
+            nouveauBoutonModifier.textContent = "Modifier";
+            blocDeChaqueTache.appendChild(nouveauBoutonModifier);
+            //si on clique sur le nouveau bouton Modifier
 
         })
         
