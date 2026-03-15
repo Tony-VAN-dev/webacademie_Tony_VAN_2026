@@ -17,7 +17,10 @@ export class GestionLocalStorage{
         // let donnees = 
         let donnees = this.getDonnees();
         // let donnees = this.recupererDonneesInput();
-        this.creerCompteLocalStorage(donnees);
+        if(this.verificationDesDonneesCreation(donnees))
+        {
+            this.creerCompteLocalStorage(donnees);
+        }
         // this.verificationDesDonneesCreation(donnees);
         
     }
@@ -45,11 +48,12 @@ export class GestionLocalStorage{
         let utilisateurs = JSON.parse(localStorage.getItem("utilisateurs"));
 
         let tableauIdUtilisateur = [];
+        //ajouts d'id de l'utilisateur dans un tableau
         utilisateurs.forEach((utilisateur)=>
         {
         tableauIdUtilisateur.push(utilisateur.id);
         });
-
+        // comparaison d'id
         tableauIdUtilisateur.forEach((e)=>{
             if(e.id == utilisateurId)
             {
@@ -59,6 +63,8 @@ export class GestionLocalStorage{
     }
     creerCompteLocalStorage(donnees) // objet Utilisateur qui sera créé, FONCTION A METTRE A JOUR
     {
+        let utilisateurs = JSON.parse(localStorage.getItem("utilisateurs"));
+
         let utilisateurId = crypto.randomUUID();
         //tant que l'id de l'utilisateur généré a un nombre égale à un des id des utilisateurs, on regénère son id
         do
@@ -67,14 +73,24 @@ export class GestionLocalStorage{
         }
         while(this.verificationIdUtilisateur(utilisateurId));
         
+        let adresseEmailValeur = donnees[0].value;
+        let motDePasseValeur = donnees[1].value;
+
         // une fois l'id est fiable à 100%, on va le mettre dans l'objet qu'on va créé
         let utilisateur = 
         {
             "id": utilisateurId,
-            "adresse mail": donnees[0],
-            "motDePasse": donnees[1],
+            "adresse mail": adresseEmailValeur,
+            "motDePasse": motDePasseValeur,
             "taches": []
         };
+
+        utilisateurs.push(utilisateur);
+        let nouvelUtilisateur = utilisateurs;
+        localStorage.setItem("utilisateurs", JSON.stringify(nouvelUtilisateur));
+        console.log("Tableau utilisateur du localStorage :" + utilisateur);
+        
+        
         // localStorage.setItem("session", "1234");
         // localStorage.setItem("adresseMail", donnees[1]);
         // localStorage.setItem("adresseMail", donnees[2]);
@@ -114,12 +130,17 @@ export class GestionLocalStorage{
         return donnees;
     }
     
-    verificationDesDonneesCreation(donneesConnexion, donneesLocalStorage)
+    verificationDesDonneesCreation(donneesCreation)
     {
         // si le mot de passe est pareil que l'autre mot de passe écrit
-        if(donneesConnexion[1] == donnees[2])
+        if(donneesCreation[1].value == donneesCreation[2].value)
         {
             console.log("mot de passe correct");
+            return true;
+        } 
+        else
+        {
+            return false;
         }
 
     }
