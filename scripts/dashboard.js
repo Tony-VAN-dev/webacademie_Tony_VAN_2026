@@ -17,13 +17,14 @@ let creerPageTachesBouton = document.getElementById("creerPageTachesBouton");
 creerPageTachesBouton.addEventListener("click", (e)=>
 {
     console.log("Bouton cliqué");
-    // div page tache
-    let divPageTache = document.createElement("div");
-    divPageTache.classList.add("blocTache");
+
     //créer div blocTache
     let blocTache = document.createElement("div");
     blocTache.classList.add("blocTache");
     
+    let divTachesBlocEnDetails = document.createElement("div");
+    divTachesBlocEnDetails.classList.add("tachesBlocEnDetails");
+
     // .appendChild()
     // blocTache.appendChild(boutonModifierTache);
     let tachesPageTexte = document.createElement("p");
@@ -31,10 +32,12 @@ creerPageTachesBouton.addEventListener("click", (e)=>
     
     //blocTache (page de tâches)
     blocTache.appendChild(tachesPageTexte);
+    blocTache.appendChild(divTachesBlocEnDetails);
+    // divTachesBlocEnDetails.appendChild(boutonModifierTache);
     blocTache.classList.add("tacheBloc")
 
-    divPageTache.appendChild(blocTache);
-    tachesBloc[0].appendChild(blocTache);
+
+    tachesBloc[0].appendChild(blocTache); // ajout de la page de taches dans la zone de tâches
 
     //créer tache bouton
     let creerTacheBouton = document.createElement("button");
@@ -44,16 +47,31 @@ creerPageTachesBouton.addEventListener("click", (e)=>
     creerTacheBouton.addEventListener("click", (e)=>
     {
         let tacheTexte = document.createElement("p");
+        tacheTexte.textContent = "Tâche";
+        let blocDeChaqueTache = document.createElement("div");
+        blocDeChaqueTache.classList.add("blocDeChaqueTache");
+
         let boutonModifierTache = document.createElement("button");
+        boutonModifierTache.textContent = "Modifier";
+        divTachesBlocEnDetails.appendChild(blocDeChaqueTache);
+        blocDeChaqueTache.appendChild(tacheTexte);
+        blocDeChaqueTache.appendChild(boutonModifierTache);
+        // si on modifie la tache
         boutonModifierTache.addEventListener("click", (e)=>
         {
+            let inputModifierTache = document.createElement("input");
+
+
             // il faut stocker la tâche dans localStorage
             
 
         })
         
     });  
-    
+    blocTache.appendChild(creerTacheBouton);
+    divTachesBlocEnDetails.appendChild();
+    divTachesBlocEnDetails.appendChild(boutonModifierTache);
+
 });
 
 // function affichageTaches()
