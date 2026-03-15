@@ -15,13 +15,15 @@ export class GestionLocalStorage{
     }
 
     getDonnees(){
-        console.log(this.#donnees);
+        // console.log("Données (getDonnees()" + JSON.parse(this.#donnees));
         return this.#donnees;
     }
     creerUnCompte() // fonction principale
     {
         // let donnees = 
         let donnees = this.getDonnees();
+        // console.log("testtttttttttttt");
+
         this.creerTableauUtilisateurs();
         // let donnees = this.recupererDonneesInput();
         if(this.verificationDesDonneesCreation(donnees))
@@ -60,6 +62,7 @@ export class GestionLocalStorage{
         {
         tableauIdUtilisateur.push(utilisateur.id);
         });
+
         // comparaison d'id
         tableauIdUtilisateur.forEach((e)=>{
             if(e.id == utilisateurId)
@@ -162,12 +165,17 @@ export class GestionLocalStorage{
 
     seConnecterCompte()
     {
+        // console.log("testtttttttttttt");
         let donnees = this.getDonnees();
         let donneesUtilisateurs = this.getDonneesUtilisateursLocalStorage();
-        donneesUtilisateurs.forEach((e)=>{
-            if(e.adresseEmail == donnees[0])
+        console.log("Données utilisateurs : " + donneesUtilisateurs);
+        donneesUtilisateurs.forEach((e)=>
+        {
+            console.log("éléments du tableau utilisateurs : "+ e);
+            if(e.adresseEmail == donnees[0].value)
             {
-                if(e.motDePasse == donnees[1])
+                console.log("Même adresse mail (seConnecterCompte())");
+                if(e.motDePasse == donnees[1].value)
                 {
                     // création du sessionId adapté
                     let sessionId = e.id;
