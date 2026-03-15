@@ -68,7 +68,9 @@ creerPageTachesBouton.addEventListener("click", (e)=>
             tacheInput.textContent = tacheTexteValeur;
             console.log(tacheTexteValeur);
             blocDeChaqueTache.appendChild(tacheInput);
-                        
+            //le boutonModiferTache disparait
+            boutonModifierTache.style.display = "none";
+            //creation d'un nouveau bouton Modifier
 
         })
         
