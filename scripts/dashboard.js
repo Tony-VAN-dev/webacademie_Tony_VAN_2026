@@ -62,20 +62,33 @@ creerPageTachesBouton.addEventListener("click", (e)=>
         boutonModifierTache.addEventListener("click", (e)=>
         {
             let inputModifierTache = document.createElement("input");
-            let tacheTexteValeur = tacheTexte.value;
+            console.log(tacheTexte);
+            let tacheTexteValeur = tacheTexte.textContent;
+            // tacheInput
             let tacheInput = document.createElement("input");
             tacheInput.style.width = "100px";
-            tacheInput.textContent = tacheTexteValeur;
+            tacheInput.setAttribute("value", tacheTexteValeur);
             console.log(tacheTexteValeur);
+
             blocDeChaqueTache.appendChild(tacheInput);
+            //la tâche va disparaitre
+            tacheTexte.style.display = "none";
+
             //le boutonModiferTache disparait
             boutonModifierTache.style.display = "none";
+            
             //creation d'un nouveau bouton Modifier
             let nouveauBoutonModifier = document.createElement("button");
             nouveauBoutonModifier.textContent = "Modifier";
             blocDeChaqueTache.appendChild(nouveauBoutonModifier);
             //si on clique sur le nouveau bouton Modifier
-
+            nouveauBoutonModifier.addEventListener("click",(e)=>
+            {
+                let tacheInputValeur = tacheInput.value;
+                // la tâche sera modifié
+                tacheTexte.textContent = tacheInputValeur;
+            }
+            );
         })
         
     });  

@@ -38,6 +38,7 @@
 }
     .blocDeChaqueTache{
         display:flex;
+        justify-content: center;
     }
 }
 
