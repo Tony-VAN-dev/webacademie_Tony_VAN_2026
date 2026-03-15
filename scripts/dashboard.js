@@ -54,23 +54,28 @@ creerPageTachesBouton.addEventListener("click", (e)=>
         let boutonModifierTache = document.createElement("button");
         boutonModifierTache.textContent = "Modifier";
         divTachesBlocEnDetails.appendChild(blocDeChaqueTache);
+        divTachesBlocEnDetails.appendChild(boutonModifierTache);
+
         blocDeChaqueTache.appendChild(tacheTexte);
         blocDeChaqueTache.appendChild(boutonModifierTache);
         // si on modifie la tache
         boutonModifierTache.addEventListener("click", (e)=>
         {
             let inputModifierTache = document.createElement("input");
-
-
-            // il faut stocker la tâche dans localStorage
-            
+            let tacheTexteValeur = tacheTexte.value;
+            let tacheInput = document.createElement("input");
+            tacheInput.style.width = "100px";
+            tacheInput.textContent = tacheTexteValeur;
+            console.log(tacheTexteValeur);
+            blocDeChaqueTache.appendChild(tacheInput);
+                        
 
         })
         
     });  
     blocTache.appendChild(creerTacheBouton);
-    divTachesBlocEnDetails.appendChild();
-    divTachesBlocEnDetails.appendChild(boutonModifierTache);
+    // divTachesBlocEnDetails.appendChild();
+    // divTachesBlocEnDetails.appendChild(boutonModifierTache);
 
 });
 
