@@ -14,9 +14,24 @@ class gestionLocalStorage{
 
     creerCompteLocalStorage(donnees) // objet Utilisateur qui sera créé, FONCTION A METTRE A JOUR
     {
-        localStorage.setItem("session", "1234");
-        localStorage.setItem("adresseMail", donnees[1]);
-        localStorage.setItem("adresseMail", donnees[2]);
+        let utilisateurs = [];
+        // création d'id pour un futur compte utilisateur
+        let id = crypto.randomUUID();
+        
+        // si l'id généré est égale à l'id d'un compte créé auparavant
+
+        
+
+        let utilisateur = 
+        {
+            "id": crypto.randomUUID(),
+            "adresse mail": donnees[0],
+            "motDePasse": donnees[1],
+            "taches": []
+        };
+        // localStorage.setItem("session", "1234");
+        // localStorage.setItem("adresseMail", donnees[1]);
+        // localStorage.setItem("adresseMail", donnees[2]);
     }
 
     // quand on appuie sur le bouton pour se connecter
