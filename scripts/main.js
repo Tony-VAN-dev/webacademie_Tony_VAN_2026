@@ -54,10 +54,10 @@ function creerformulaire()
     inputMdp.style.display = "block";
     
     // mot de passe 2
-    let inputMdp2 = document.createElement("input");
-    inputMdp2.setAttribute("type","password");
-    inputMdp2.setAttribute("id", "motDePasse2");
-    inputMdp2.style.display = "block";
+    // let inputMdp2 = document.createElement("input");
+    // inputMdp2.setAttribute("type","password");
+    // inputMdp2.setAttribute("id", "motDePasse2");
+    // inputMdp2.style.display = "block";
     // div creerEtConnecterCompte
     let divCreerEtConnecterCompte = document.createElement("div");
 
@@ -70,9 +70,9 @@ function creerformulaire()
         // variables
         let adresseEmailInput = document.getElementById("adresseEmail");
         let motDePasseInput = document.getElementById("motDePasse");
-        let motDePasseInput2 = document.getElementById("motDePasse2");
+        // let motDePasseInput2 = document.getElementById("motDePasse2");
 
-        let donneesInput = [adresseEmailInput,motDePasseInput,motDePasseInput2];
+        let donneesInput = [adresseEmailInput,motDePasseInput];
         let GestionLocalStorageInstance = new GestionLocalStorage(donneesInput);
         GestionLocalStorageInstance.creerUnCompte();
     });
@@ -100,7 +100,7 @@ function creerformulaire()
     inputEmail,
     labelMdp,
     inputMdp,
-    inputMdp2,
+    // inputMdp2,
     divCreerEtConnecterCompte
     ];
 

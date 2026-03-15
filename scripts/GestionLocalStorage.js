@@ -26,10 +26,12 @@ export class GestionLocalStorage{
 
         this.creerTableauUtilisateurs();
         // let donnees = this.recupererDonneesInput();
-        if(this.verificationDesDonneesCreation(donnees))
-        {
+        // if(this.verificationDesDonneesCreation(donnees))
+        // {
+        //     this.creerCompteLocalStorage(donnees);
+        // }
             this.creerCompteLocalStorage(donnees);
-        }
+
         // this.verificationDesDonneesCreation(donnees);
         
     }
@@ -111,10 +113,10 @@ export class GestionLocalStorage{
         let donnees = []; // [0] = adresseEmailValeur, [1] motDePasseValeur, [2] motDePasseValeur2
         let adresseEmailValeur = this.#donnees[0].value;
         let motDePasseValeur = this.#donnees[1].value;
-        let motDePasseValeur2 = this.#donnees[2].value;
-        let donneesPourBoucle = [adresseEmailValeur, motDePasseValeur, motDePasseValeur2];
+        // let motDePasseValeur2 = this.#donnees[2].value;
+        let donneesPourBoucle = [adresseEmailValeur, motDePasseValeur];
 
-        for(let i = 0 ; i < 3 ; i++)
+        for(let i = 0 ; i < 2 ; i++)
         {
             donnees.push(donneesPourBoucle[i]);
             console.log(donnees);
@@ -129,8 +131,7 @@ export class GestionLocalStorage{
         donnees = []; // [0] = adresseEmailValeur, [1] motDePasseValeur, [2] motDePasseValeur2
         adresseEmailValeur = adresseEmailInput.value;
         motDePasseValeur = motDePasseInput.value;
-        motDePasseValeur2 = motDePasseInput2.value;
-        donneesPourBoucle = [adresseEmailValeur, motDePasseValeur, motDePasseValeur2];
+        donneesPourBoucle = [adresseEmailValeur, motDePasseValeur];
 
         for(let i = 0 ; i < 3 ; i++)
         {
@@ -140,20 +141,20 @@ export class GestionLocalStorage{
         return donnees;
     }
     
-    verificationDesDonneesCreation(donneesCreation)
-    {
-        // si le mot de passe est pareil que l'autre mot de passe écrit
-        if(donneesCreation[1].value == donneesCreation[2].value)
-        {
-            console.log("mot de passe correct");
-            return true;
-        } 
-        else
-        {
-            return false;
-        }
+    // verificationDesDonneesCreation(donneesCreation)
+    // {
+    //     // si le mot de passe est pareil que l'autre mot de passe écrit
+    //     if(donneesCreation[1].value == donneesCreation[2].value)
+    //     {
+    //         console.log("mot de passe correct");
+    //         return true;
+    //     } 
+    //     else
+    //     {
+    //         return false;
+    //     }
 
-    }
+    // }
 
     verifierSessionId() // si sessionId est à null, on retourne true
     {
