@@ -14,7 +14,6 @@
     position:fixed;
     box-sizing: border-box;
     width:100%;
-
     p{
         color : #1F4890;
     }
@@ -30,7 +29,13 @@
             text-decoration: none;
         }
     }
-
+h2
+{
+        /* color: #1F4890; */
+}
+p{
+    color: #1F4890;
+}
 
 /* #presentationLifePlannerSection{
     background-color: #EBF1FB;

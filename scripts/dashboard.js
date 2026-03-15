@@ -13,18 +13,36 @@ function chercherUtilisateurParSessionId(tache)
 }
 //variables dashboard
 let tachesBloc = document.getElementsByClassName("tachesBloc");
-let creerPageTacheBouton = document.getElementById("creerPageTachesBouton");
-creerPageTacheBouton.addEventListener("click", (e)=>
+let creerPageTachesBouton = document.getElementById("creerPageTachesBouton");
+creerPageTachesBouton.addEventListener("click", (e)=>
 {
+    console.log("Bouton cliqué");
     // div page tache
     let divPageTache = document.createElement("div");
     divPageTache.classList.add("blocTache");
+    //créer div blocTache
+    let blocTache = document.createElement("div");
+    blocTache.classList.add("blocTache");
+    
+    // .appendChild()
+    // blocTache.appendChild(boutonModifierTache);
+    let tachesPageTexte = document.createElement("p");
+    tachesPageTexte.textContent = "Page de tâches";
+    
+    //blocTache (page de tâches)
+    blocTache.appendChild(tachesPageTexte);
+    blocTache.classList.add("tacheBloc")
+
+    divPageTache.appendChild(blocTache);
+    tachesBloc[0].appendChild(blocTache);
+
     //créer tache bouton
     let creerTacheBouton = document.createElement("button");
-    creerPageTacheBouton.textContent = "Créer une tâche";
+    creerTacheBouton.textContent = "Créer une tâche";
+
+
     creerTacheBouton.addEventListener("click", (e)=>
     {
-        // let document.createElement("select");
         let tacheTexte = document.createElement("p");
         let boutonModifierTache = document.createElement("button");
         boutonModifierTache.addEventListener("click", (e)=>
@@ -33,11 +51,12 @@ creerPageTacheBouton.addEventListener("click", (e)=>
             
 
         })
+        
     });  
     
 });
 
-function affichageTaches()
-{
+// function affichageTaches()
+// {
     
-}
+// }
