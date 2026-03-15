@@ -155,11 +155,12 @@ export class GestionLocalStorage{
 
     }
 
-    verifierSessionId()
+    verifierSessionId() // si sessionId est à null, on retourne true
     {
         if(localStorage.getItem("sessionId") == null)
         {
             console.log("Pas de sessionId détecté");
+            return true;
         }
     }
 
@@ -184,6 +185,9 @@ export class GestionLocalStorage{
                     console.log("Connexion réussie");
                 }
             }
+
+            // une fois connecté, si il y'a une sessionId, on va recharger la page
+            window.reload();
         });
 
 

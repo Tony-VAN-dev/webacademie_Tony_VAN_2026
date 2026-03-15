@@ -87,7 +87,7 @@ function creerformulaire()
         let adresseEmailInput = document.getElementById("adresseEmail");
         let motDePasseInput = document.getElementById("motDePasse");
         let motDePasseInput2 = document.getElementById("motDePasse2");
-        
+
         let donneesInput = [adresseEmailInput,motDePasseInput,motDePasseInput2];
         let GestionLocalStorageInstance = new GestionLocalStorage(donneesInput);
         GestionLocalStorageInstance.seConnecterCompte();
@@ -125,5 +125,18 @@ function creerformulaire()
     return formulaire;
 }
 
+function creerLienDashboard()
+{
+    if(localStorage.getItem("sessionId") !== null)
+    {
+        let dashboardLien = document.createElement("a");
+        dashboardLien.setAttribute("href","dashboard.html");
+        dashboardLien.textContent = "Dashboard";
+        deuxiemeCoteNavBar.appendChild(dashboardLien);
+
+    }
+}
+
 let formulaire = creerformulaire();
+creerLienDashboard();
 // console.log("les donnees sont : " + GestionLocalStorageInstance.getDonnees());
