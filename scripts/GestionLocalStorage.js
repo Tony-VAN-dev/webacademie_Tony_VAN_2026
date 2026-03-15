@@ -8,6 +8,12 @@ export class GestionLocalStorage{
         });
     }
 
+    getDonneesUtilisateursLocalStorage()
+    {
+        let donnees = JSON.parse(localStorage.getItem("utilisateurs"));
+        return donnees;
+    }
+
     getDonnees(){
         console.log(this.#donnees);
         return this.#donnees;
@@ -16,6 +22,7 @@ export class GestionLocalStorage{
     {
         // let donnees = 
         let donnees = this.getDonnees();
+        this.creerTableauUtilisateurs();
         // let donnees = this.recupererDonneesInput();
         if(this.verificationDesDonneesCreation(donnees))
         {
@@ -39,11 +46,11 @@ export class GestionLocalStorage{
         else
         {
             console.log(JSON.parse(localStorage.getItem("utilisateurs")));
-            console.log("Le tableau d'utilisateurs existe déjà.");
+            console.log("Le tableau d'utilisateurs existe déjà afin d'être recréé.");
             
         }
     }
-    verificationIdUtilisateur() // Retourne false si on true un id correct
+    verificationIdUtilisateur(utilisateurId) // Retourne false si on true un id correct
     {
         let utilisateurs = JSON.parse(localStorage.getItem("utilisateurs"));
 
@@ -80,7 +87,7 @@ export class GestionLocalStorage{
         let utilisateur = 
         {
             "id": utilisateurId,
-            "adresse mail": adresseEmailValeur,
+            "adresseEmail": adresseEmailValeur,
             "motDePasse": motDePasseValeur,
             "taches": []
         };
@@ -153,4 +160,25 @@ export class GestionLocalStorage{
         }
     }
 
+    seConnecterCompte()
+    {
+        let donnees = this.getDonnees();
+        let donneesUtilisateurs = this.getDonneesUtilisateursLocalStorage();
+        donneesUtilisateurs.forEach((e)=>{
+            if(e.adresseEmail == donnees[0])
+            {
+                if(e.motDePasse == donnees[1])
+                {
+                    // création du sessionId adapté
+                    let sessionId = e.id;
+                    // ajout du sessionId adapté
+                    localStorage.setItem("sessionId", JSON.stringify(sessionId));
+                    console.log("Connexion réussie");
+                }
+            }
+        });
+
+
+
+    }
 }

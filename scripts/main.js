@@ -81,6 +81,17 @@ function creerformulaire()
     seConnecter.textContent = "Se connecter";
     // seConnecter.style.position = "absolute";
     seConnecter.style.textAlign = "left";
+    //si on clique sur Se connecter
+    seConnecter.addEventListener("click",(e)=>{
+        // variables
+        let adresseEmailInput = document.getElementById("adresseEmail");
+        let motDePasseInput = document.getElementById("motDePasse");
+        let motDePasseInput2 = document.getElementById("motDePasse2");
+        
+        let donneesInput = [adresseEmailInput,motDePasseInput,motDePasseInput2];
+        let GestionLocalStorageInstance = new GestionLocalStorage(donneesInput);
+        GestionLocalStorageInstance.seConnecterCompte();
+    });
 
     // ajouts d'enfants au formulaire
     
