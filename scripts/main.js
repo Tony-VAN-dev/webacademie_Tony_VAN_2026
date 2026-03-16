@@ -6,6 +6,8 @@ import {GestionLocalStorage} from "./GestionLocalStorage.js";
 
 // variables du site Web
 
+let essayerSansCompteBtn = document.getElementById("essayerSansCompteBtn");
+
 let navBar = document.querySelector(".navBar");
 let deuxiemeCoteNavBar = document.querySelector(".deuxiemeCoteNavBar");
 deuxiemeCoteNavBar.style.position = "relative";
@@ -136,6 +138,15 @@ function creerLienDashboard()
 
     }
 }
+
+// si le bouton Essayer sans compte a une valeur, ajout de l'écouteur d'évènement
+if(essayerSansCompteBtn !== null)
+{
+    essayerSansCompteBtn.addEventListener("click",(e)=>{
+    window.location.href = "dashboard.html";
+    });
+}
+
 
 let formulaire = creerformulaire();
 creerLienDashboard();
