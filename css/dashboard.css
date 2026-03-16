@@ -9,7 +9,8 @@
      /* position:relative; */
     margin:auto;
     text-align:center;
-
+    overflow:scroll;
+    
     h2{
         color:white;
     }
