@@ -191,7 +191,5 @@ export class GestionLocalStorage{
             window.location.reload();
         });
 
-
-
     }
 }

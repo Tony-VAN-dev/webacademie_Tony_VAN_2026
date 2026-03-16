@@ -94,9 +94,20 @@ p{
 }
 main{
     #sectionCommentUtiliserLifePlanner{
-    height:800px;
+    /* height:800px; */
     width:100%;
     text-align: center;
     /* background-color:; */
 }
+}
+
+footer {
+    background-color:#bbcff3;
+    text-align: center;
+    /* color:white; */
+    
+}
+
+.center{
+    text-align:center;
 }
