@@ -88,12 +88,14 @@ p{
     text-align:center;
     /* position:relative; */
 }
-
+#sectionCestQuoiLifePlanner{
+    text-align: center;
+}
 main{
     #sectionCommentUtiliserLifePlanner{
     height:800px;
     width:100%;
     text-align: center;
-    background-color:;
+    /* background-color:; */
 }
 }
