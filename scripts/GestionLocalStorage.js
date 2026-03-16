@@ -188,7 +188,7 @@ export class GestionLocalStorage{
             }
 
             // une fois connecté, si il y'a une sessionId, on va recharger la page
-            window.reload();
+            window.location.reload();
         });
 
 

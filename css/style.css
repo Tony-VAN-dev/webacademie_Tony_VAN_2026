@@ -72,6 +72,7 @@ p{
         p{
             color:rgb(44, 80, 170);
             font-size:13px;
+            cursor:pointer;
         }
     }
 }
