@@ -87,6 +87,10 @@ creerPageTachesBouton.addEventListener("click", (e)=>
                 let tacheInputValeur = tacheInput.value;
                 // la tâche sera modifié
                 tacheTexte.textContent = tacheInputValeur;
+                tacheInput.style.display = "none";
+                tacheTexte.style.display = "block";
+                nouveauBoutonModifier.style.display = "none";
+                boutonModifierTache.style.display = "block";
             }
             );
         })
