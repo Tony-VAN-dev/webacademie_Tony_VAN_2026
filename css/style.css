@@ -4,6 +4,10 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
+main{
+    padding-top:80px;
+}
+
 .padding-top{
     padding-top:80px;
 }
@@ -33,10 +37,7 @@
             text-decoration: none;
         }
     }
-h2
-{
-        /* color: #1F4890; */
-}
+
 p{
     color: #1F4890;
 }
@@ -86,4 +87,13 @@ p{
     height:400px;
     text-align:center;
     /* position:relative; */
+}
+
+main{
+    #sectionCommentUtiliserLifePlanner{
+    height:800px;
+    width:100%;
+    text-align: center;
+    background-color:;
+}
 }
