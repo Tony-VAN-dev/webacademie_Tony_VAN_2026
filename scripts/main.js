@@ -78,6 +78,7 @@ function creerformulaire()
         let GestionLocalStorageInstance = new GestionLocalStorage(donneesInput);
         GestionLocalStorageInstance.creerUnCompte();
     });
+    
     // se connecter
     let seConnecter = document.createElement("button");
     seConnecter.textContent = "Se connecter";
@@ -143,7 +144,7 @@ function creerLienDashboard()
 if(essayerSansCompteBtn !== null)
 {
     essayerSansCompteBtn.addEventListener("click",(e)=>{
-    window.location.href = "dashboard.html";
+    window.location.href = "../dashboard.html";
     });
 }
 

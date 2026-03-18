@@ -20,17 +20,15 @@ export class GestionLocalStorage{
     }
     creerUnCompte() // fonction principale
     {
-        // let donnees = 
+        // donnees input = 
         let donnees = this.getDonnees();
         // console.log("testtttttttttttt");
-
-        this.creerTableauUtilisateurs();
-        // let donnees = this.recupererDonneesInput();
-        // if(this.verificationDesDonneesCreation(donnees))
-        // {
-        //     this.creerCompteLocalStorage(donnees);
-        // }
-            this.creerCompteLocalStorage(donnees);
+        if(this.getDonneesUtilisateursLocalStorage() == null)
+        {
+            this.creerTableauUtilisateurs();
+        }
+        console.log((this.getDonneesUtilisateursLocalStorage))
+        this.creerCompteLocalStorage(donnees);
 
         // this.verificationDesDonneesCreation(donnees);
         
@@ -46,6 +44,7 @@ export class GestionLocalStorage{
             utilisateurs = JSON.stringify(utilisateurs);
             localStorage.setItem("utilisateurs",utilisateurs);
             console.log(JSON.parse(localStorage.getItem("utilisateurs")));
+            console.log("Le tableau d'utilisateurs est : " + JSON.parse(localStorage.getItem("utilisateurs")));
         }
         else
         {
@@ -54,6 +53,7 @@ export class GestionLocalStorage{
             
         }
     }
+
     verificationIdUtilisateur(utilisateurId) // Retourne false si on true un id correct
     {
         let utilisateurs = JSON.parse(localStorage.getItem("utilisateurs"));
@@ -76,15 +76,19 @@ export class GestionLocalStorage{
     creerCompteLocalStorage(donnees) // objet Utilisateur qui sera créé, FONCTION A METTRE A JOUR
     {
         let utilisateurs = JSON.parse(localStorage.getItem("utilisateurs"));
-
+        console.log("utilisateurs : " + utilisateurs);
         let utilisateurId = crypto.randomUUID();
-        //tant que l'id de l'utilisateur généré a un nombre égale à un des id des utilisateurs, on regénère son id
-        do
+        if(utilisateurs == null) // si il n'y a pas un compte utilisateur
         {
-            utilisateurId = crypto.randomUUID();
+            //tant que l'id de l'utilisateur généré a un nombre égale à un des id des utilisateurs, on regénère son id
+            do
+            {
+                utilisateurId = crypto.randomUUID();
+            }
+            while(this.verificationIdUtilisateur(utilisateurId));
         }
-        while(this.verificationIdUtilisateur(utilisateurId));
         
+        // création du compte avec les valeurs de l'input
         let adresseEmailValeur = donnees[0].value;
         let motDePasseValeur = donnees[1].value;
 
@@ -171,25 +175,32 @@ export class GestionLocalStorage{
         let donnees = this.getDonnees();
         let donneesUtilisateurs = this.getDonneesUtilisateursLocalStorage();
         console.log("Données utilisateurs : " + donneesUtilisateurs);
-        donneesUtilisateurs.forEach((e)=>
+        if(donneesUtilisateurs !== null)
         {
-            console.log("éléments du tableau utilisateurs : "+ e);
-            if(e.adresseEmail == donnees[0].value)
+            donneesUtilisateurs.forEach((e)=>
             {
-                console.log("Même adresse mail (seConnecterCompte())");
-                if(e.motDePasse == donnees[1].value)
+                console.log("éléments du tableau utilisateurs : "+ e);
+                if(e.adresseEmail == donnees[0].value)
                 {
-                    // création du sessionId adapté
-                    let sessionId = e.id;
-                    // ajout du sessionId adapté
-                    localStorage.setItem("sessionId", JSON.stringify(sessionId));
-                    console.log("Connexion réussie");
+                    console.log("Même adresse mail (seConnecterCompte())");
+                    if(e.motDePasse == donnees[1].value)
+                    {
+                        // création du sessionId adapté
+                        let sessionId = e.id;
+                        // ajout du sessionId adapté
+                        localStorage.setItem("sessionId", JSON.stringify(sessionId));
+                        console.log("Connexion réussie");
+                    }
                 }
-            }
 
-            // une fois connecté, si il y'a une sessionId, on va recharger la page
-            window.location.reload();
-        });
+                // une fois connecté, si il y'a une sessionId, on va recharger la page
+                window.location.reload();
+            });
+        }
+        else{
+            console.log("Pas de compte utilisateur afin de se connecter");
+        }
+        
 
     }
 }
