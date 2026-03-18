@@ -27,7 +27,6 @@ export class GestionLocalStorage{
         {
             this.creerTableauUtilisateurs();
         }
-        console.log((this.getDonneesUtilisateursLocalStorage))
         this.creerCompteLocalStorage(donnees);
 
         // this.verificationDesDonneesCreation(donnees);
