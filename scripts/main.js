@@ -144,7 +144,7 @@ function creerLienDashboard()
 if(essayerSansCompteBtn !== null)
 {
     essayerSansCompteBtn.addEventListener("click",(e)=>{
-    window.location.href = "../dashboard.html";
+    window.location.href = "dashboard.html";
     });
 }
 
